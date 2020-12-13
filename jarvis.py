@@ -5,9 +5,6 @@ import tkinter as tk
 import webbrowser
 import os
 import time as t
-import pynput
-from pynput.mouse import Button
-from pynput.keyboard import Key
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
@@ -47,7 +44,7 @@ def wishMe():
     else:
         speak("Good Evening!")
 
-    speak("I am Aniee Sir. Please tell me how may I help you")
+    speak("I am lalith Sir. Please tell me how may I help you")
 
 
 # It takes microphone input from the user and calls process function
@@ -69,7 +66,9 @@ def takeCommand():
 
 
 def send_mail():
-    fromaddr = "bogalasaikiran4308@gmail.com"
+    #https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4PY4_lBCtDFFqgYXrId0u7bKf7JtI-J6sTVKkz41sCeCMfWt-7ayR17_e2fdrjDgArUlYTOLlNfELeFHPOXdkNeI2wk9g
+    #go to above site and allow less secure apps
+    fromaddr = "gullanianirudh1000@gmail.com"
     toaddr = e1.get()
     bod= e2.get()
     fil = e3.get()
@@ -93,7 +92,7 @@ def send_mail():
         msg.attach(p)
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
-    s.login(fromaddr, "saianitha")
+    s.login(fromaddr, "enter your password")
     text = msg.as_string()
     s.sendmail(fromaddr, toaddr, text)
     s.quit()
